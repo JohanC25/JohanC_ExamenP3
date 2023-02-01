@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:models="clr-namespace:JohanC_ExamenP3.Models"
+             xmlns:local="clr-namespace:JohanC_ExamenP3.ViewModels"
+             x:Class="JohanC_ExamenP3.Views.JCMarvelItemPage"
+             Title="Marvel Add/Edit">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+			                 Spacing="10"
+			                 VerticalOptions="StartAndExpand">
+            <Label Text="Nombre" />
+            <Entry x:Name="nameB" Text="{Binding JCNombre}" />
+            <Label Text="Descripción" />
+            <Entry x:Name="descB" Text="{Binding JCDescripcion}" />
+            <Label Text="Hora Creación" />
+            <Label x:Name="FechaHora" 
+                   Text="{Binding DateTime, StringFormat='{0:dd/MM/yyyy HH:mm:ss'}" >
+                <Label.BindingContext >
+                    <local:JCDateViewModel />
+                </Label.BindingContext>
+            </Label>
+            <Button Text="Guardar"
+		            Clicked="OnSaveClicked" />
+            <Button Text="Borrar"
+                    Clicked="OnDeleteClicked" />
+            <Button Text="Cancelar"
+		            Clicked="OnCancelClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

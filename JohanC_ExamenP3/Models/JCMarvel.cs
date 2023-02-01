@@ -2,7 +2,7 @@
 
 namespace JohanC_ExamenP3.Models
 {
-	[Table("JCMarvel")]
+	[Table("marvel")]
 	public class JCMarvel
 	{
 		[PrimaryKey, AutoIncrement]

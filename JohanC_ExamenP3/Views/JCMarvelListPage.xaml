@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JohanC_ExamenP3.Views.JCMarvelListPage"
+             xmlns:models="clr-namespace:JohanC_ExamenP3.Models"
+             Title="JCMarvelListPage">
+
+    <Grid RowDefinitions="*,Auto">
+        <CollectionView x:Name="marvelList"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:JCMarvel">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="4*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding Id}" />
+                        <Label Grid.Column="1" Text="{Binding JCNombre}" />
+                        <Label Grid.Column="2" Text="{Binding JCDescripcion}" />
+                        <Label Grid.Column="3" Text="{Binding DateTime}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="Añadir nuevo registro" Clicked="OnItemAdded"
+                Margin="20"/>
+    </Grid>
+    
+</ContentPage>

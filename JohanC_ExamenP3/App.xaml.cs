@@ -1,11 +1,16 @@
-﻿namespace JohanC_ExamenP3;
+﻿using JohanC_ExamenP3.Data;
+
+namespace JohanC_ExamenP3;
 
 public partial class App : Application
 {
-	public App()
+	public static JCMarvelDatabase MarvelRepo { get; private set; }
+	public App(JCMarvelDatabase repo)
 	{
 		InitializeComponent();
 
 		MainPage = new AppShell();
+
+		MarvelRepo = repo;
 	}
 }
